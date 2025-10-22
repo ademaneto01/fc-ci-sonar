@@ -5,7 +5,7 @@ const port = process.env.PORT || 3000;
 const server = createServer(app);
 
 server.listen(port, () => {
-  // log silencioso para não poluir testes
+  console.log(`Server running on http://localhost:${port}`);
 });
 
 export default server;
