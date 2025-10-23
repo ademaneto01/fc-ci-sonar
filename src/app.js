@@ -3,6 +3,7 @@ import { add } from "./utils/math.js";
 
 const app = express();
 app.disable("x-powered-by");
+
 app.use(express.json());
 
 app.get("/health", (_req, res) => {
