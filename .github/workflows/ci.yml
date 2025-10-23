@@ -2,8 +2,7 @@ name: ci-node
 
 on:
   pull_request:
-    branches:
-      - master
+    branches: [ "master" ]
  
 jobs:
   check-application:
