@@ -3,8 +3,8 @@ name: ci-node
 on:
   pull_request:
     branches:
-      - develop
-
+      - master
+ 
 jobs:
   check-application:
     runs-on: ubuntu-latest
