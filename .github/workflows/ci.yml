@@ -2,17 +2,14 @@ name: ci-node
 
 on:
   pull_request:
-    branches: [ "master" ]
+    branches:
+      - master
  
 jobs:
   check-application:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608  
-        with:
-          fetch-depth: 0
-          fetch-tags: true
-
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 20
@@ -20,7 +17,7 @@ jobs:
       - run: npm run test:coverage
 
       - name: SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@2f3149a0c73e2f9cb2892cbd8d0cfcc949de1a5e
+        uses: SonarSource/sonarqube-scan-action@v6
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
