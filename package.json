@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/index.js",
     "test": "node --test",
-    "test:coverage": "c8 -r lcov -r text-summary node --test"
+      "test:coverage": "c8 node --test"
   },
   "dependencies": {
     "express": "^4.19.2"
