@@ -10,9 +10,16 @@ app.get("/health", (_req, res) => {
   res.status(200).json({ ok: true });
 });
 
+
 app.post("/echo", (req, res) => {
-  res.status(200).json({ youSent: req.body ?? null });
+  const body = req.body;
+  const isEmptyObject =
+    body == null ||
+    (typeof body === "object" && !Array.isArray(body) && Object.keys(body).length === 0);
+
+  res.status(200).json({ youSent: isEmptyObject ? null : body });
 });
+
 
 app.get("/sum", (req, res) => {
   const a = Number(req.query.a);
