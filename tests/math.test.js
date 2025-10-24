@@ -11,3 +11,4 @@ test("add lança erro para entradas não numéricas", () => {
   assert.throws(() => add("2", 3), { name: "TypeError" });
   assert.throws(() => add(2, null), { name: "TypeError" });
 });
+
