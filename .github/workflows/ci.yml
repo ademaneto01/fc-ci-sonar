@@ -3,7 +3,7 @@ name: ci-node
 on:
   pull_request:
     branches:
-      - master
+      - develop
  
 jobs:
   check-application:
